@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block activites%} 
+        <div class="container-fluid overflow-hidden about py-5">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
+                        <div class="about-item">
+                           
+                            
+                        {% for reqs in  req %}
+                            <div class="row g-4">
+                                <div class="col-lg-6">
+                                    <div class="text-center rounded bg-secondary p-4">
+                                        
+                                        <h5 class="text-light mb-0">BFLC-SARLU</h5>
+                                        <h5 class="text-light mb-0">{{reqs.date_aj}}</h5>
+
+                                    </div>
+                                    <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
+                                        <div class="about-img">
+                                            <div class="img-1">
+                                                <img src="{{reqs.photo.url}}" style="height: 500px;width: 500px;" class="img-fluid rounded h-100 w-100" alt="">
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-6 d-flex align-items-center">
+                                    <p>{{reqs.description}}</p>
+                                </div>
+                                
+                               
+                            </div>
+                            {% endfor %}
+                        </div>
+                       
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+{%endblock%}
+
